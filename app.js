@@ -3,6 +3,8 @@ var app=express();
 
 var bodyParser=require('body-parser');
 
+
+app.use(express.static(__dirname+'/client'));
 app.use(bodyParser.json());
 
 var mongoose=require('mongoose');
@@ -86,6 +88,14 @@ app.delete('/api/genres/:_id',function(req,res){
   Genre.removeGenre(id,function(err,genre){
     if(err) throw err;
     res.json(genre)
+  })
+})
+
+app.delete('/api/books/:_id',function(req,res){
+  var id=req.params._id;
+  Book.removeBook(id,function(err,book){
+    if(err) throw err;
+    res.json(book)
   })
 })
 

@@ -1,0 +1,21 @@
+<div class="panel panel-info" ng-init=getBooks()>
+  <div class="panel-heading">Latest Books</div>
+  <div class="panel-body">
+        <div class="row">
+          <div ng-repeat="book in books">
+            <div class="col-md-6">
+              <div class="col-md-6">
+                {{book.title}}
+                <br>
+                <p>{{book.description}}</p>
+                <a class="btn btn-primary" href="#!/books/details/{{book._id}}">View Details</a>
+              </div>
+              <div class="col-md-6">
+                <img class="thumbnail" ng-src="{{book.image_url}}">
+              </div>
+            </div>
+            
+          </div>
+        </div>
+  </div>
+</div>
